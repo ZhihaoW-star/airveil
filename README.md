@@ -6,7 +6,9 @@
 
 ![Illustration of a person turning left and right while the entire simulated Mac screen blurs](docs/media/airveil-demo.gif)
 
-*Illustrative animation, not a recording of the app. Timing and appearance vary by device.*
+[Watch or download the 1080p demo](https://github.com/ZhihaoW-star/airveil/releases/download/v0.7.0-beta/airveil-demo-1080p.mp4) · [View the poster](docs/media/demo-poster.png)
+
+*28-second illustrative animation, not a recording of the app. It shows head turns, automatic clarity, the comfort zone, reconnect attempts, and quick pause. Timing and appearance vary by device.*
 
 AirVeil uses AirPods head motion to gently blur your Mac screen as you look away. Look back and it clears. Set a **comfort zone** so small movements do not trigger blur.
 
