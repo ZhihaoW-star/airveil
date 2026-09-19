@@ -58,7 +58,7 @@ def make_background():
     im.paste(icon,(65,42),icon)
     text(d,(147,55),'AirVeil',34,bold=True)
     text(d,(1844,68),'AIRPODS + MAC',21,GRAY,True,'ra')
-    text(d,(76,1020),'Illustrative demo · Not a screen recording',20,GRAY)
+    text(d,(76,1020),'Illustrative animation · Simulated screen',20,GRAY)
     text(d,(1842,1020),'macOS 14+ · Compatible AirPods required',20,GRAY,anchor='ra')
     return im
 
@@ -69,17 +69,17 @@ def make_screen():
         d.ellipse((20+i*24,17,31+i*24,28),fill=c)
     text(d,(589,23),'Focus space',17,GRAY,anchor='mm')
     d.rounded_rectangle((26,72,250,546),18,fill='#E3EBEE')
-    text(d,(51,103),'Workspace',22,bold=True)
-    for i,s in enumerate(('Overview','My notes','Projects','Archive')):
+    text(d,(51,103),'Your space',22,bold=True)
+    for i,s in enumerate(('Today','Your ideas','Projects','Highlights')):
         yy=163+i*58
         if i==0: d.rounded_rectangle((40,yy-8,234,yy+36),10,fill='white')
         text(d,(60,yy),s,19,GREEN if i==0 else GRAY,i==0)
-    text(d,(286,88),'A little room to focus.',36,bold=True)
-    text(d,(286,141),'Your day, at your own pace.',20,GRAY)
+    text(d,(286,88),'Make room for great ideas.',36,bold=True)
+    text(d,(286,141),'Build something you love.',20,GRAY)
     d.rounded_rectangle((283,191,1148,346),18,fill='white')
-    text(d,(309,215),'Today’s notes',23,bold=True)
-    text(d,(309,258),'Make space for a thoughtful afternoon.',21,GRAY)
-    text(d,(309,293),'Read. Sketch. Take a moment.',21,GRAY)
+    text(d,(309,215),'Today’s inspiration',23,bold=True)
+    text(d,(309,258),'Bring your next idea to life.',21,GRAY)
+    text(d,(309,293),'Explore. Create. Make progress.',21,GRAY)
     for i,(label,c) in enumerate((('Ideas','#C8E9E0'),('In progress','#D6E4F5'),('A fresh start','#EAE0D1'))):
         xx=283+i*296
         d.rounded_rectangle((xx,369,xx+273,541),18,fill='white')
@@ -99,8 +99,8 @@ def frame(t):
     angle = interp(t,[(0,0),(1,0),(2.5,-70),(3.3,-70),(4.8,0),(6,0),(7.5,70),(8.3,70),(10,0),(12,0),(13,18),(14,-18),(15.3,0),(28,0)])
     amount = ease((abs(angle)-28)/42)
     section = 0 if t<6 else 1 if t<12 else 2 if t<16 else 3 if t<21 else 4 if t<25 else 5
-    titles = ['Look away. Blur the whole screen.','Turn either way. Return to clear.','A little movement? Stay clear.','A lost connection isn’t a restart.','Pause whenever you need to.','A quieter workspace, on your terms.']
-    subs = ['A soft blur that grows as you turn your head.','Left or right. AirVeil follows your head motion.','Adjust your comfort zone to match how you sit.','AirVeil retries automatically when head motion disconnects.','One click or a keyboard shortcut. You stay in control.','No camera. No account. Screen images stay on your Mac.']
+    titles = ['Move naturally. Enjoy more privacy.','Face your Mac. Enjoy a clear view.','Make room for natural movement.','Pick up where you left off.','Choose when to pause.','Your focus. Your space. Your control.']
+    subs = ['A soft blur that grows as you turn your head.','Left or right. AirVeil follows your head motion.','Adjust your comfort zone to match how you sit.','Automatic reconnect attempts help you get back to your flow.','One click or a keyboard shortcut. You stay in control.','Powered by your AirPods. Screen images stay on your Mac.']
     status = 'Facing forward' if abs(angle)<28 else ('Looking left' if angle<0 else 'Looking right')
     detail = 'Screen is clear' if amount<.01 else 'Whole-screen blur'
     if section==2: status,detail = 'Within comfort zone','Small movements stay clear'
@@ -141,9 +141,9 @@ def frame(t):
     else:
         text(d,(1594,897),'PUBLIC BETA · SOURCE AVAILABLE',17,GREEN,True,'mm')
     if section==3:
-        text(d,(681,968),'Cannot force AirPods to switch back from iPhone.',21,GRAY,anchor='mm')
+        text(d,(681,968),'After iPhone use, reconnect AirPods in macOS Bluetooth.',21,GRAY,anchor='mm')
     elif section==4:
-        text(d,(681,968),'Pause before taking a clear screenshot or sharing your screen.',21,GRAY,anchor='mm')
+        text(d,(681,968),'Pause for clear screenshots and screen sharing.',21,GRAY,anchor='mm')
     elif section==5:
         text(d,(681,968),'github.com/ZhihaoW-star/airveil',26,GREEN,True,'mm')
     else:
