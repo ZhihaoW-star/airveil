@@ -224,6 +224,8 @@ static NSTextField *label(NSString *s,CGFloat size,NSRect r){NSTextField *v=[NST
  [self wakeAnimation];_testUntil=0;
  if(!compositorAvailable()){_reason=@"GPU rendering is unavailable on this Mac.";return;}
  if(!self.captureReady){[self prepareCapture:nil];_reason=@"Getting screen access ready. When ready, click Start protection again.";return;}
+ // Protection takes ownership of capture from a temporary preview.
+ _labPreviewRunning=NO;
  _phoneMode=NO;
  _sessionRequested=YES;_paused=NO;_manualHold=NO;_latched=NO;
  if(!self.fresh){[self connect:nil];[self enterRecovery:@"Waiting for AirPods. Reconnecting automatically."];return;}
@@ -260,7 +262,7 @@ static NSTextField *label(NSString *s,CGFloat size,NSRect r){NSTextField *v=[NST
 }
 - (void)restore:(id)sender {[self arm:nil];}
 - (void)stop:(id)sender {_phoneMode=NO;_sessionRequested=NO;_reconnecting=NO;_manualHold=NO;_motionGeneration++;_displayProgress=0;_armed=NO;_paused=NO;_calibrating=NO;_autoArmWhenReady=NO;_latched=NO;_connected=NO;_baselineValid=NO;_testUntil=0;[_motion stopDeviceMotionUpdates];[_motion stopConnectionStatusUpdates];_radioToggle.state=NSControlStateValueOff;_reason=@"Disconnected. The display is clear.";[self render:0 full:NO right:NO];[self stopScreenCapture];}
-- (void)panic:(id)sender {if(!self.captureReady){[self prepareCapture:nil];_reason=@"Wait for screen access, then choose Blur Now again.";return;}[self wakeAnimation];_manualHold=YES;_autoArmWhenReady=NO;_calibrating=NO;_paused=NO;_latched=YES;_testUntil=0;_reason=@"Holding soft focus. Use the pause shortcut to restore clarity.";if(_autoHide)[_window orderOut:nil];}
+- (void)panic:(id)sender {if(!self.captureReady){[self prepareCapture:nil];_reason=@"Wait for screen access, then choose Blur Now again.";return;}[self wakeAnimation];_labPreviewRunning=NO;_manualHold=YES;_autoArmWhenReady=NO;_calibrating=NO;_paused=NO;_latched=YES;_testUntil=0;_reason=@"Holding soft focus. Use the pause shortcut to restore clarity.";if(_autoHide)[_window orderOut:nil];}
 - (void)test:(id)sender {
  [self wakeAnimation];
  if((_armed&&!_paused)||_latched||_calibrating){_reason=@"Pause tracking before trying the six-second effect.";return;}

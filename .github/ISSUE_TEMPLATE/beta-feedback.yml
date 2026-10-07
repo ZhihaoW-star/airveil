@@ -1,0 +1,49 @@
+name: Beta feedback or bug report
+description: Share reproducible problems or AirPods compatibility results.
+title: "[Beta feedback]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for testing AirVeil. Never include serial numbers, Bluetooth addresses, device names, account details, or private screen content. Review diagnostics before sharing them.
+  - type: input
+    id: version
+    attributes:
+      label: AirVeil version and installation method
+      placeholder: "Example: 0.7.0 release ZIP, or source commit SHA"
+    validations:
+      required: true
+  - type: input
+    id: system
+    attributes:
+      label: macOS version and Mac chip
+      placeholder: "Example: macOS 15.6, M2"
+    validations:
+      required: true
+  - type: input
+    id: headphones
+    attributes:
+      label: AirPods model
+      placeholder: "Model only; no serial number or personal device name. Use none for preview-only tests."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps and display setup
+      description: Include whether screen access was ready, whether you used the six-second preview, and the number of displays.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and observed behavior
+      description: Successful compatibility reports are welcome too. Separate your observations from guesses.
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Optional reviewed diagnostics
+      description: Remove personal information before pasting. No screenshots of private content are needed.
+      render: text

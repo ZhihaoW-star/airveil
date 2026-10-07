@@ -6,7 +6,7 @@ trap 'rm -rf "$test_build_dir"' EXIT
 frameworks=(-framework Cocoa -framework CoreMotion -framework IOBluetooth -framework Carbon -framework CoreImage -framework QuartzCore -framework ScreenCaptureKit -framework Metal -framework CoreMedia -framework CoreVideo)
 clang PolicyTests.c -o "$test_build_dir/policy"
 "$test_build_dir/policy"
-for name in RecoveryTests PublicRendererTests CaptureGateTests; do
+for name in RecoveryTests PublicRendererTests CaptureGateTests PreviewLifecycleTests; do
   clang -fobjc-arc -O2 -mmacosx-version-min=14.0 "${frameworks[@]}" "$name.m" -o "$test_build_dir/$name"
   "$test_build_dir/$name"
 done

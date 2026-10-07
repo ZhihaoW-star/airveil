@@ -1,6 +1,7 @@
 <p align="center"><img src="Source/Assets/AirVeilIcon.png" width="104" alt="AirVeil icon"></p>
 
 <h1 align="center">AirVeil</h1>
+<p align="center">English · <a href="README.zh-CN.md">简体中文</a></p>
 <p align="center"><strong>Look away. Blur the screen.</strong><br>A small macOS app that adds whole-screen blur when you turn your head.</p>
 <p align="center">macOS 14+ · Compatible AirPods required · Public beta · Source available</p>
 
@@ -34,6 +35,8 @@ Turn your head left or right to try it. If blur starts too early, move **Comfort
 **Pause** clears the screen and stops screen capture. Reopen settings from the Dock or menu bar. If a setup action is still preparing access, wait for the ready message and click it again.
 
 **Just exploring?** Drag the sample slider without granting screen access. To try your actual desktop, allow screen access and click **Try screen blur · 6 sec**. That preview ends and stops capture automatically.
+
+**Building the current source?** The source now fixes a preview timer that could stop capture after you chose Start protection or Blur Now during the six-second preview. The downloadable 0.7.0 beta predates this fix.
 
 ## Shortcuts
 
