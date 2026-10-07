@@ -1,12 +1,12 @@
 # Changelog
 
-## Unreleased
+## 0.7.1 beta
 
 - Keep screen capture active when Start protection or Blur Now takes over a six-second preview. Previously, the preview completion path could stop the new session.
 - Regression tests cover preview takeover, normal expiry, and Pause cancellation.
 - Add a Simplified Chinese getting-started guide and a structured beta feedback form.
 
-These changes are in source; the downloadable 0.7.0 beta does not include them.
+The 0.7.1 beta includes these changes; the earlier 0.7.0 download does not.
 
 ## 0.7.0 beta
 
