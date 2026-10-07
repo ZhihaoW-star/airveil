@@ -1,3 +1,16 @@
+# AirVeil 0.7.1 beta — preview capture fix
+
+The [0.7.1 beta release](https://github.com/ZhihaoW-star/airveil/releases/tag/v0.7.1-beta) includes the capture-lifecycle fix: Start protection or Blur Now can take over a six-second preview without its completion logic stopping the new session.
+
+- Download `airveil-0.7.1-beta-macos-arm64.zip` and its matching `.sha256` file.
+- Simplified Chinese onboarding and a structured beta feedback form are included in the repository.
+- Regression coverage checks both takeover paths, ordinary expiry and Pause cancellation. The existing test suite and local build/archive checks passed.
+- Requirements and limits remain macOS 14+, Apple Silicon download, compatible AirPods, local ad-hoc signing, and no notarization. No additional physical-device or battery testing is claimed.
+
+The earlier release notes are preserved below.
+
+---
+
 # AirVeil 0.7.0 beta — first public-source release
 
 Turn your head to gently blur your whole Mac screen. Look back to clear it.

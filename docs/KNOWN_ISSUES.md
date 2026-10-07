@@ -1,8 +1,8 @@
 # Beta status and known issues
 
-AirVeil 0.7.0 beta is the public-source packaging and onboarding update based on
-the 0.6.1 public-API experiment. It retains the existing rendering and connection
-policies. It is not an App Store release.
+AirVeil 0.7.1 beta includes the preview capture-lifecycle fix and Chinese
+onboarding added after the 0.7.0 public-source package. It retains the public-API
+renderer and connection policies. It is not an App Store release.
 
 - **Signing:** downloads are ad-hoc signed, not Developer ID signed or notarized.
 - **Hardware:** the release build targets Apple Silicon. Intel, every AirPods

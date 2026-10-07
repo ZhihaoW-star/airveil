@@ -17,7 +17,7 @@ AirVeil 利用兼容 AirPods 的头部运动数据控制整屏模糊。不使用
 - 现有下载包面向 Apple Silicon。Intel 本地构建属于实验支持，尚未经实机验证；不支持 Windows。
 - 这是公开测试版，尚未在所有 AirPods、系统版本和多屏组合上验证。耗电与长时间使用体验也未完成测量。
 
-[下载 Apple Silicon 0.7.0 测试版](https://github.com/ZhihaoW-star/airveil/releases/download/v0.7.0-beta/airveil-0.7.0-beta-macos-arm64.zip) · [发行说明](https://github.com/ZhihaoW-star/airveil/releases/tag/v0.7.0-beta)
+[下载 Apple Silicon 0.7.1 测试版](https://github.com/ZhihaoW-star/airveil/releases/download/v0.7.1-beta/airveil-0.7.1-beta-macos-arm64.zip) · [发行说明](https://github.com/ZhihaoW-star/airveil/releases/tag/v0.7.1-beta)
 
 下载包采用本地 ad-hoc 签名，**没有 Developer ID 签名或公证**。macOS 可能阻止打开。信任源码后，可参考 [Apple 的官方打开说明](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac)，或自行构建。请勿全局关闭 Gatekeeper。
 
@@ -69,8 +69,6 @@ open dist/AirVeil.app
 ```
 
 输出位于 `dist/`，包含应用、标注架构的 ZIP 和 SHA-256 校验值。构建面向当前 Mac 的架构，不是通用二进制。
-
-**当前源码已修复预览计时器的问题**：在六秒预览中选择 Start protection 或 Blur Now 后，预览结束逻辑不应再停止新会话的屏幕采集。现有 0.7.0 下载包尚不包含这项修复。
 
 运行自动测试：
 

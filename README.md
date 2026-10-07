@@ -22,9 +22,9 @@ AirVeil uses AirPods head motion to gently blur your Mac screen as you look away
 
 You need **macOS 14 or later**, a Metal-capable Mac, and AirPods that provide head-motion data through Apple's Core Motion API. Pair the headphones with your Mac first. Bluetooth connection alone does not mean motion is supported.
 
-The first downloadable build is for **Apple Silicon (arm64)**. Intel support has not been device-tested; a local Intel build is experimental. Windows is not supported.
+The downloadable build is for **Apple Silicon (arm64)**. Intel support has not been device-tested; a local Intel build is experimental. Windows is not supported.
 
-[Download the Apple Silicon beta](https://github.com/ZhihaoW-star/airveil/releases/download/v0.7.0-beta/airveil-0.7.0-beta-macos-arm64.zip), see the [release notes](https://github.com/ZhihaoW-star/airveil/releases/tag/v0.7.0-beta), or [build it yourself](#build-from-source). The beta download is locally signed, **not Developer ID signed or notarized**. macOS may block it. If you trust the source, follow [Apple's instructions for opening an app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac), or build locally. Do not disable Gatekeeper globally.
+[Download the Apple Silicon beta](https://github.com/ZhihaoW-star/airveil/releases/download/v0.7.1-beta/airveil-0.7.1-beta-macos-arm64.zip), see the [release notes](https://github.com/ZhihaoW-star/airveil/releases/tag/v0.7.1-beta), or [build it yourself](#build-from-source). The beta download is locally signed, **not Developer ID signed or notarized**. macOS may block it. If you trust the source, follow [Apple's instructions for opening an app from an unidentified developer](https://support.apple.com/guide/mac-help/open-a-mac-app-from-an-unidentified-developer-mh40616/mac), or build locally. Do not disable Gatekeeper globally.
 
 1. Open **AirVeil** and click **1. Allow screen access**. Allow it in **System Settings → Privacy & Security → Screen & System Audio Recording** (the exact name varies by macOS version). Despite that category name, AirVeil captures no audio.
 2. Wear your AirPods and click **2. Connect AirPods**. Allow motion or Bluetooth access if macOS asks.
@@ -35,8 +35,6 @@ Turn your head left or right to try it. If blur starts too early, move **Comfort
 **Pause** clears the screen and stops screen capture. Reopen settings from the Dock or menu bar. If a setup action is still preparing access, wait for the ready message and click it again.
 
 **Just exploring?** Drag the sample slider without granting screen access. To try your actual desktop, allow screen access and click **Try screen blur · 6 sec**. That preview ends and stops capture automatically.
-
-**Building the current source?** The source now fixes a preview timer that could stop capture after you chose Start protection or Blur Now during the six-second preview. The downloadable 0.7.0 beta predates this fix.
 
 ## Shortcuts
 
